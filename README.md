@@ -9,15 +9,94 @@ historical median, the most active months and years, and lets you download the n
 That is 92 million FIRMS detections, which become 26 million fire cell-days.
 **Default view:** Colombia (pilot country). Draw any rectangle or polygon inside the dashed outline on the map, or pick a quick area.
 
-## Run it
+## Install and run (step by step)
 
+The app runs on your own computer: a small Python server reads the data and your web browser shows the interface.
+You need about **10 minutes** and **400 MB** of free space the first time. After that, opening it takes seconds.
+
+### 1. What you need
+
+| Requirement | How to check | Where to get it |
+|---|---|---|
+| **Python 3.11 or newer** | `python --version` (Windows) or `python3 --version` (macOS/Linux) | <https://www.python.org/downloads/>. On Windows, tick **"Add python.exe to PATH"** in the installer. |
+| **A web browser** | Chrome, Edge, Firefox or Safari | |
+| **Internet connection** | Only for the first install and for the map background | |
+
+Git is optional: you can download the project as a ZIP instead.
+
+### 2. Get the project
+
+**Option A, without Git:** on this page click the green **Code** button, then **Download ZIP**, and extract it.
+You get a folder called `burning-activity-calendar-main`.
+
+**Option B, with Git:**
 ```bash
-pip install -r requirements.txt
-BURNCAL_DATA=data/processed python -m uvicorn app.main:app --port 8000   # then open http://127.0.0.1:8000
-pip install pytest && python -m pytest -q                                  # 52 tests
+git clone https://github.com/biombo-anexo/burning-activity-calendar.git
 ```
-On Windows PowerShell: `$env:BURNCAL_DATA="data\processed"; python -m uvicorn app.main:app --port 8000`.
-Open the page through the server, not by double-clicking `index.html`.
+You get a folder called `burning-activity-calendar`.
+
+### 3. Install (first time only)
+
+Open a terminal **inside the project folder** (the one that contains `README.md` and `requirements.txt`):
+
+- **Windows:** open the folder in File Explorer, click the address bar, type `powershell` and press Enter.
+- **macOS:** right-click the folder in Finder, then **New Terminal at Folder**.
+- **Linux:** right-click inside the folder, then **Open in Terminal**.
+
+Then create a private Python environment for the project and install the libraries into it:
+
+**Windows (PowerShell)**
+```powershell
+python -m venv .venv
+.venv\Scripts\python -m pip install -r requirements.txt
+```
+
+**macOS / Linux**
+```bash
+python3 -m venv .venv
+.venv/bin/python -m pip install -r requirements.txt
+```
+
+The install downloads pandas, DuckDB, FastAPI and a few other libraries (about 2–5 minutes).
+It ends with a line starting with `Successfully installed`.
+
+### 4. Start the app (every time)
+
+In a terminal inside the project folder:
+
+**Windows (PowerShell)**
+```powershell
+.venv\Scripts\python -m uvicorn app.main:app --port 8000
+```
+
+**macOS / Linux**
+```bash
+.venv/bin/python -m uvicorn app.main:app --port 8000
+```
+
+Wait until it prints `Uvicorn running on http://127.0.0.1:8000`, then open **<http://127.0.0.1:8000>** in your browser.
+The default view is Colombia; pick a **Quick area** or draw a rectangle or polygon on the map, then press **Analyze**.
+
+**Keep the terminal open while you use the app**: it is the server. To stop it, press **Ctrl+C** in the terminal (or close it).
+
+### 5. Run the tests (optional)
+
+```powershell
+.venv\Scripts\python -m pip install pytest httpx
+.venv\Scripts\python -m pytest -q
+```
+(macOS/Linux: replace `.venv\Scripts\python` with `.venv/bin/python`.) All 52 tests should pass.
+
+### Troubleshooting
+
+| Problem | Cause and fix |
+|---|---|
+| `python` is not recognized, or opens the Microsoft Store | Python is not installed or not on PATH. Reinstall it from python.org with **"Add python.exe to PATH"** ticked, then open a new terminal. |
+| `Could not open requirements file` | The terminal is not inside the project folder. Use `cd` to go to the folder that contains `requirements.txt`. |
+| `Failed to fetch` or an empty page | The page was opened by double-clicking `index.html`. Start the server (step 4) and open <http://127.0.0.1:8000> instead. |
+| `address already in use` / port 8000 busy | The app is already running in another terminal: just open the link. Or start it on another port with `--port 8001` and open <http://127.0.0.1:8001>. |
+| The map background is grey | The map tiles come from the internet. Check your connection; the analysis itself works offline. |
+| Changes do not appear after an update | Refresh the page with **Ctrl+F5** (macOS: Cmd+Shift+R). |
 
 ## Method
 
