@@ -17,7 +17,6 @@ BURNCAL_DATA=data/processed python -m uvicorn app.main:app --port 8000   # then 
 pip install pytest && python -m pytest -q                                  # 52 tests
 ```
 On Windows PowerShell: `$env:BURNCAL_DATA="data\processed"; python -m uvicorn app.main:app --port 8000`.
-Docker: `docker build -t burncal . && docker run -p 10000:10000 burncal`.
 Open the page through the server, not by double-clicking `index.html`.
 
 ## Method
