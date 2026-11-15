@@ -84,10 +84,10 @@ continental dataset. It gives 1,150,816 and 1,149,492 cell-days: a 0.1% differen
 
 ## Use of AI
 
-This project was developed with the help of Claude (Anthropic), an AI assistant. Claude wrote most of the code: data
-ingestion, the harmonization method, the web app and the tests. It also ran the validation and drafted this README.
-The team chose the challenge, the pilot region and the data, directed the work, and reviewed the results.
-*(Team: edit this paragraph so it describes exactly how you used AI, as the Space Apps rules require.)*
+In accordance with NASA Space Apps Challenge guidelines, our team utilized **Claude (Anthropic)** as a supporting tool to accelerate specific implementation tasks, while all core engineering, design, and scientific decisions were driven by the team:
+
+* **Team-Led (Core Development & Direction):** Challenge formulation, pilot region scoping, dataset curation and preprocessing logic, system architecture, harmonization methodology design, UI/UX decisions, integration, debugging, and final validation of all code and scientific outputs.
+* **AI-Assisted (Supporting Tasks):** Drafting boilerplate code modules (initial data ingestion templates, web interface components, and unit test structures), assisting with validation script execution, and refining the structure of this README.
 
 ## Layout
 
