@@ -1,0 +1,20 @@
+{
+  "retrieved": "2026-11-14",
+  "source": "https://firms.modaps.eosdis.nasa.gov/api/map_dates/ and FIRMS announcement 2026-11-05, both captured in the user's browser HAR",
+  "map_dates": {
+    "modis_nrt": ["2020-11-01", "2026-11-14"],
+    "modis_v6": ["2000-11-01", "2026-08-31"],
+    "jpss1_viirs_c2_nrt": ["2019-12-04", "2026-11-14"],
+    "jpss1_viirs_c2": ["2018-04-01", "2026-07-31"],
+    "jpss2_viirs_c2_nrt": ["2024-01-17", "2026-11-14"],
+    "jpss2_viirs_c2": ["2023-03-01", "2026-07-31"],
+    "suomi_viirs_c2_nrt": ["2019-09-01", "2026-11-02"],
+    "suomi_viirs_c2_sp": ["2012-01-20", "2026-07-31"],
+    "ba_monthly": ["2000-11-01", "2026-08-01"],
+    "ba_monthly_viirs": ["2012-03-01", "2026-08-01"]
+  },
+  "announcements": [
+    "Delivery of Suomi NPP satellite observations ceased on 2026-11-02; FIRMS tells users to transition to NOAA-21 and NOAA-20."
+  ],
+  "snpp_cease_date": "2026-11-02"
+}
