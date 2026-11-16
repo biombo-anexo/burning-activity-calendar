@@ -5108,7 +5108,7 @@
   "min_date": "2000-11-01",
   "max_date": "2026-11-15",
   "modis_end": "2026-11-15",
-  "viirs_end": "2026-11-02",
+  "viirs_end": "2026-11-15",
   "provisional_start": "2026-08-01",
   "gap_months": {
    "2012-03": 1,
@@ -5431,8 +5431,8 @@
   }
  ],
  "warnings": [
-  "MODIS ends 2026-11-15 but VIIRS ends 2026-11-02; the series ends at the VIIRS date.",
-  "VIIRS S-NPP stopped delivering data on 2026-11-02, so this series ends on 2026-11-02 and cannot be extended with S-NPP. To keep it updating, add NOAA-20 (archive from 2018-04-01) or NOAA-21 (from 2023-03-01) and calibrate them against S-NPP on their overlap."
+  "VIIRS S-NPP stopped delivering data on 2026-11-02. From 2026-11-03 to 2026-11-15 the series uses VIIRS NOAA-20, converted to S-NPP-equivalent values with a per-calendar-month ratio (held-out test 2023 to 2026-10: 4.4% monthly error over the whole area, bias +0.9%). These days are provisional, and small areas are less certain.",
+  "MODIS ends 2026-11-15; after 2026-11-02 the VIIRS part of the series comes from NOAA-20."
  ],
  "firms_coverage": {
   "snapshot_date": "2026-11-14",
