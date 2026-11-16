@@ -7,7 +7,7 @@ on a map. MODIS (2000→) and VIIRS (2012→) are harmonized into **one consiste
 without a jump when the sensor changes. It shows when the fire season is, how unusual each month is against the
 historical median, the most active months and years, and lets you download the numbers.
 
-**Data loaded:** South America plus North and Central America (everything north of 10° N), 2000-11-01 → 2026-11-02.
+**Data loaded:** South America plus North and Central America (everything north of 10° N), 2000-11-01 → 2026-11-15. VIIRS S-NPP stopped on 2026-11-02; the days from 3 to 15 Nov 2026 come from VIIRS NOAA-20, calibrated against S-NPP with a per-calendar-month ratio (held-out test 2023 → 2026-10: 4.4% monthly error over the whole area, bias +0.9%).
 That is 92 million FIRMS detections, which become 26 million fire cell-days.
 **Default view:** Colombia (pilot country). Draw any rectangle or polygon inside the dashed outline on the map, or pick a quick area.
 
@@ -147,8 +147,7 @@ continental dataset. It gives 1,150,816 and 1,149,492 cell-days: a 0.1% differen
 ## Limits
 
 - **Years 2000–2011 are estimates** (converted MODIS), not observations. The app marks them with a dashed border and "(est.)".
-- **The record ends 2026-11-02.** VIIRS S-NPP stopped delivering data that day. Continuing the series needs NOAA-20/21
-  calibrated against S-NPP (not implemented).
+- **S-NPP ended 2026-11-02; 3–15 Nov 2026 use calibrated NOAA-20.** NOAA-20 is converted to S-NPP-equivalent values with a per-calendar-month ratio measured on the 2018-04 → 2026-10 overlap (train 2018–2022, test 2023 → 2026-10): 4.4% monthly error over the whole area (bias +0.9%), versus 58% for raw MODIS. Per 1° block the error is about 23% per month, so small areas after 2 Nov 2026 are less certain.
 - **Remaining regional bias:** Western US +16%, Bolivian lowlands −7%, Canadian boreal −7% in the independent check. The
   regional factors are constant in time and work at 1° blocks, so much smaller areas can still be biased.
 - **Cell-days are not burned area** or emissions. They count days with detected fire per ~11 km cell.
