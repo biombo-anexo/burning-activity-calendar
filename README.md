@@ -1,6 +1,8 @@
 # Burning Activity Calendar (MODIS + VIIRS)
 
-**Live app, no installation needed:** https://burning-activity-calendar.onrender.com/ (free hosting, so the first load can take about a minute while the server wakes up).
+**Live demo (stable):** https://burning-activity-calendar.onrender.com
+
+**Live demo with NOAA-20 extension (after S-NPP):** https://burning-activity-calendar-noaa20.onrender.com
 
 A web app that turns NASA FIRMS active-fire hotspots into a **burning calendar** (months × years) for any area you draw
 on a map. MODIS (2000→) and VIIRS (2012→) are harmonized into **one consistent series**, so 26 years can be compared
